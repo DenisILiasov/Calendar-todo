@@ -1,0 +1,30 @@
+.task{
+    overflow: hidden;
+    color: #FFF;
+    text-overflow: ellipsis;
+    font-size: 13.75px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; 
+}
+
+.taskWrapp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+    width: 100%;
+    border-radius: 14.438px;
+    background: rgba(18, 153, 229, 0.29);
+    padding: 1px 11px;
+    cursor:default;
+}
+
+.deleted{
+    font-size: 13.75px;
+    cursor: pointer;
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; 
+}

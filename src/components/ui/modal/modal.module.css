@@ -1,0 +1,31 @@
+.modaleWrapp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.modaleWrapp.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modaleContent{
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+}
+
+.modaleClouse{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}

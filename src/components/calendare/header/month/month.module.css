@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.month{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32.292px; 
+    letter-spacing: 0.33px;
+    color: rgba(248, 247, 250, 0.64);
+    padding: 6px 11px;
+}

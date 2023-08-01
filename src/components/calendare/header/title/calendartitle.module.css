@@ -1,0 +1,23 @@
+.container{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.month{
+    font-size: 38.5px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    color: #fff;
+}
+
+.year{
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 2.64px;
+    color: rgba(221, 224, 255, 0.12);
+}
