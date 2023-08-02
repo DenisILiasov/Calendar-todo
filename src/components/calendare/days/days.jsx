@@ -2,7 +2,7 @@ import React from "react";
 import Day from "./day/day"
 import style from './days.module.css'
 
-const Days = ({days, number, daysLen}) => {
+const Days = ({days, number, daysLen, zero}) => {
     const today = new Date().getDate()
     
     const monthDay = days.map((el, index) => {
@@ -16,8 +16,6 @@ const Days = ({days, number, daysLen}) => {
             }
         } 
     })
-
-    let zero = monthDay.length 
         
     return(
         <div className={style.wrap}>

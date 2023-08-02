@@ -9,10 +9,6 @@ import React from "react";
 const Calender = () => {
     const days = useSelector(state => state.days.days)
     const [daysLen, setDaysLen] = useState(0);
-
-    useEffect(() => {
-        setDaysLen(days.length)
-    }, [])
     
    
     const [months, setMonth] = useState(new Date().getMonth()) 
@@ -46,10 +42,8 @@ const Calender = () => {
         }
         dispath(nextMonth())
         setNumber(prev => prev += 1)
-    
     } 
     
-
     const getPrevMonth = () => {
         if(number >= 1){
             setMonth(prev => prev - 1)
@@ -58,7 +52,6 @@ const Calender = () => {
             }
             setNumber(prev => prev -= 1)
         }
-        
     }
     
     return(
