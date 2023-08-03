@@ -2,12 +2,15 @@
 
 .container{
     width: 173px;
-    height: 170px;
+    height: 145px;
+ 
     border: 1.375px solid #3A3943;
     padding: 10px;
     background: #262627;
     transition: all 0.4s;
 }
+
+
 .container:hover{
     background-color: #333232;
     
@@ -51,4 +54,28 @@
     border: 2px solid #171718;
     border-radius: 20px;
     cursor: pointer;
+}
+
+@media(max-width: 1270px){
+    .container{
+        width: 150px;
+    }
+}
+
+@media(max-width: 1110px){
+    .container{
+        width: 130px;
+    }
+}
+
+@media(max-width: 992px){
+    .container{
+        width: 600px;
+    }
+}
+
+@media(max-width: 614px){
+    .container{
+        width: 300px;
+    }
 }

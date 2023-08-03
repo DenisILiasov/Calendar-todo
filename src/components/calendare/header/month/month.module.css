@@ -14,3 +14,10 @@
     color: rgba(248, 247, 250, 0.64);
     padding: 6px 11px;
 }
+
+
+@media(max-width: 992px){
+    .container{
+        display: none;
+    }
+}

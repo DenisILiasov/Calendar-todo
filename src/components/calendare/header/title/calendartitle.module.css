@@ -21,3 +21,12 @@
     letter-spacing: 2.64px;
     color: rgba(221, 224, 255, 0.12);
 }
+
+@media(max-width: 992px){
+    .month{
+        font-size: 30px;
+    }
+    .year{
+        font-size: 33px;
+    }
+}

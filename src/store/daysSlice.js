@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {createCalendare} from "../utils/createCalender";
+import {createCalendare, createCalendareFromMobile} from "../utils/createCalender";
 
 let year = new Date().getFullYear()
 let month = new Date().getMonth() + 1
@@ -12,21 +12,27 @@ const daysSlice = createSlice(
         },
         reducers:{
             renderDays(state, actions){
-                const daysList = createCalendare(year, month)
-                state.days.push(...daysList)
+                if(window.innerWidth > 992){
+                    state.days.push(createCalendare(year, month))
+                }else{
+                    state.days.push(createCalendareFromMobile(year, month))
+                }
             },
             nextMonth(state, actions){
                 month += 1
-                if(month >= 12){
+                if(month > 12){
                     month = 1;
                     year += 1
                 }
-                const daysList2 = createCalendare(year, month)
-                state.days.push(...daysList2)
+                if(window.innerWidth > 992){
+                    state.days.push(createCalendare(year, month))
+                }else{
+                    state.days.push(createCalendareFromMobile(year, month))
+                }
             },
         }
     }
 )
 
-export const {renderDays, nextMonth, prevMonth} = daysSlice.actions;
+export const {renderDays, nextMonth} = daysSlice.actions;
 export default daysSlice.reducer;

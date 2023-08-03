@@ -37,11 +37,27 @@ export const createCalendare = (year = new Date().getFullYear(), month = new Dat
                 status: 'def',
                 id: d2.getTime() + 1
             })
-    
             d2.setDate(d2.getDate() + 1)
         }
         arr2 = arr2.slice(arr2.length - firstDay, arr2.length)
         return arr2.concat(resalt)
+    }
+   
+    return resalt;
+}
+
+export const createCalendareFromMobile = (year, month) => {
+    let mon = month - 1
+    let d = new Date(year, mon)
+    let resalt = []
+    
+    while(d.getMonth() === mon){
+        resalt.push({
+            number: d.getDate(),
+            day: getNormDay(d),
+            id: d.getTime()
+        })
+        d.setDate(d.getDate() + 1)
     }
    
     return resalt;

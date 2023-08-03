@@ -5,10 +5,11 @@ import TitleDay from './titleDay/titleDay';
 import TaskList from './taskList/taskList';
 import ModalWindow from '../../../ui/modal/modal';
 import React from 'react';
+import useLocalStorage from '../../../../hooks/useLocalStorage';
 
 
 const Day = (props) => {
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useLocalStorage([], `task${props.index}`)
 
     const styleNumber = [style.number]
     if(props.status !== undefined){
@@ -35,7 +36,9 @@ const Day = (props) => {
         ])
         setModal(false)
         setText('')
+        
     }
+  
     /********/
 
     const [modal, setModal] = useState(false)
@@ -82,7 +85,7 @@ const Day = (props) => {
                 />
                 <button  className={style.button} onClick={addTask}>Add Task</button>
             </ModalWindow>              
-            {tasksList.slice(0, 3)}
+            {tasksList.slice(0, 2)}
             {tasks.length >= 2 ? 
                 <button className={style.buttonAll} onClick={openModal2}>Открыть все</button>
                 :

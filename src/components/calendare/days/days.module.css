@@ -1,5 +1,13 @@
 .wrap{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+}
+
+@media(max-width: 992px){
+    .wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
