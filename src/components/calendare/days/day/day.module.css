@@ -28,6 +28,7 @@
     font-weight: 600;
     line-height: 22px;
     color: #F8F7FA;
+    display: flex;
 }
 
 .number.Def{

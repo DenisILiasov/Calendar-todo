@@ -9,13 +9,13 @@ import style from './calender.module.css'
 
 const Calender = () => {
     const days = useSelector(state => state.days.days)
-    
+    const windowWidth = window.innerHeight
 
     const [months, setMonth] = useState(new Date().getMonth()) 
     const dispath = useDispatch() 
     useEffect(() => {
         dispath(renderDays())
-    }, [])
+    }, [windowWidth])
 
     let month = {
         0: 'Январь',

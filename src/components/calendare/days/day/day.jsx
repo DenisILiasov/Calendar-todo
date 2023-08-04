@@ -72,10 +72,10 @@ const Day = (props) => {
         setModal2(false)
     }
     /**************/
-    
+   
     return(
         <div className={styleContainer.join(' ')}>
-            <TitleDay open = {openModal} number= {props.number} styles = {styleNumber} status = {props.status}/>
+            <TitleDay open = {openModal} number= {props.number} styles = {styleNumber} status = {props.status} day = {props.day}/>
             <ModalWindow clouse = {clouseModal} openModal={modal}>
                 <input
                     className={style.input}
