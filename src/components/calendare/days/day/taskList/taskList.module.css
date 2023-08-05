@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.taskContainer{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid gray;
+    padding: 5px;
+}
+
+.deleted{
+    cursor: pointer;
+}

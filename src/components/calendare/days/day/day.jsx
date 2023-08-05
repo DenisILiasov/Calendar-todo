@@ -100,7 +100,7 @@ const Day = (props) => {
                 :
                 <div></div>
             }
-            <TaskList modal2 = {modal2} clouseModal2 = {clouseModal2} tasks = {tasks}/>
+            <TaskList modal2 = {modal2} clouseModal2 = {clouseModal2} tasks = {tasks} remove = {deletedTask}/>
         </div>
     )
 }
