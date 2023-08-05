@@ -1,12 +1,28 @@
 import style from './task.module.css'
+import { getRandomNumber } from '../../../../../utils/getRandomNumber';
+import { useMemo } from 'react';
+import React from 'react';
 
 const Task = (props) => {
+    const randomNumber = getRandomNumber()
+    
+
+    let wrappStyle = [style.taskWrapp];
+    if(randomNumber < 25){
+        wrappStyle = [style.taskWrapp]
+    }else if(randomNumber >= 25 &&  randomNumber < 50){
+        wrappStyle.push(style.color2)
+    }else if(randomNumber >= 50 &&  randomNumber < 75){
+        wrappStyle.push(style.color3)
+    }else{
+        wrappStyle.push(style.color4)
+    }
     return(
-        <div className={style.taskWrapp}>
+        <div className={wrappStyle.join(' ')}>
             <div className={style.task}>{props.task.title}</div>
             <div className={style.deleted} onClick = {() => props.remove(props.task)}>✖</div>
         </div> 
     )
 };
 
-export default Task;
+export default React.memo(Task);

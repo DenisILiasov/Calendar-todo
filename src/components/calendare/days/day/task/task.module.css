@@ -28,3 +28,15 @@
     font-weight: 500;
     line-height: 22px; 
 }
+
+.color2{
+    background-color: rgba(14, 14, 34, 0.29);
+}
+
+.color3{
+    background: rgba(255, 68, 169, 0.29);
+}
+
+.color4{
+    background: rgba(130, 78, 241, 0.29);
+}
