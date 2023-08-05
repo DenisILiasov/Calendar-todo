@@ -10,6 +10,7 @@ import style from './calender.module.css'
 const Calender = () => {
     const days = useSelector(state => state.days.days)
     const windowWidth = window.innerHeight
+    const [yearNow, setYearNow] = useState(new Date().getFullYear())
 
     const [months, setMonth] = useState(new Date().getMonth()) 
     const dispath = useDispatch() 
@@ -38,6 +39,7 @@ const Calender = () => {
         setMonth(prev => prev + 1)
         if(months >= 11){
             setMonth(prev => prev = 0)
+            setYearNow(prev => prev+1)
         }
         dispath(nextMonth())
         setNumber(prev => prev += 1)
@@ -48,6 +50,7 @@ const Calender = () => {
             setMonth(prev => prev - 1)
             if(months <= 0){
                 setMonth(11)
+                setYearNow(prev => prev-1)
             }
             setNumber(prev => prev -= 1)
         }
@@ -55,7 +58,7 @@ const Calender = () => {
     const styles  = [style.btn]
     return(
         <div>
-            <CalendarTitle month = {month[months]}/>
+            <CalendarTitle month = {month[months]} year = {yearNow}/>
             <Month/>
             <Days number = {number} days = {days}/>
             <div className={style.container}>

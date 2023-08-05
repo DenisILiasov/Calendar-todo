@@ -1,0 +1,30 @@
+.task-exit-active{
+    animation: task-out 500ms forwards;
+}
+
+.task-enter-active{
+    animation: task-in 500ms forwards;
+   
+}
+
+@keyframes task-in{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes task-out{
+    0%{
+        opacity: 1;
+        transform: translateX();
+    }
+    100%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}

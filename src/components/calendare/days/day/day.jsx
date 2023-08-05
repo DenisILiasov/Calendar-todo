@@ -6,6 +6,8 @@ import TaskList from './taskList/taskList';
 import ModalWindow from '../../../ui/modal/modal';
 import React from 'react';
 import useLocalStorage from '../../../../hooks/useLocalStorage';
+import { TransitionGroup, CSSTransition} from 'react-transition-group';
+import './animation.css'
 
 
 const Day = (props) => {
@@ -58,7 +60,11 @@ const Day = (props) => {
     
     /*TASK LIST*/
     const tasksList = tasks.map(task => {
-        return <Task task = {task} key = {task.id} remove = {deletedTask}/>
+        return(
+            <CSSTransition key = {task.id}  classNames='task' timeout={500}>
+                  <Task task = {task} key = {task.id} remove = {deletedTask}/>
+            </CSSTransition>
+        ) 
     })
     
     /***********/
@@ -84,8 +90,11 @@ const Day = (props) => {
                     onChange={e => setText(e.target.value)}
                 />
                 <button  className={style.button} onClick={addTask}>Add Task</button>
-            </ModalWindow>              
-            {tasksList.slice(0, 2)}
+            </ModalWindow>
+            <TransitionGroup component= 'task'>
+                {tasksList.slice(0, 2)}
+            </TransitionGroup>              
+            
             {tasks.length >= 2 ? 
                 <button className={style.buttonAll} onClick={openModal2}>Открыть все</button>
                 :
