@@ -1,10 +1,17 @@
 import style from './task.module.css'
 import { getRandomNumber } from '../../../../../utils/getRandomNumber';
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 
 const Task = (props) => {
-    const randomNumber = getRandomNumber()
+    const [randomNumber, setRandomNumber] = useState()
+    const pushRandomNumber = () => {
+        setRandomNumber(getRandomNumber())
+    }
+
+    useEffect(() => {
+        pushRandomNumber()
+    }, [])
     
 
     let wrappStyle = [style.taskWrapp];
