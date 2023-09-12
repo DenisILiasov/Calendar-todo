@@ -11,10 +11,11 @@
     font-weight: bold;
     cursor: pointer;
     border: none;
-    font-size: 17px;
+    font-size: 25px;
     background-color: transparent;
     color: #F8F7FA;
 }
+
 
 .number{
     margin: 0 5px 0 0;
